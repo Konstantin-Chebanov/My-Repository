@@ -34,5 +34,29 @@ BOOST_AUTO_TEST_CASE(test_case1){
 	BOOST_TEST(stringfromint(18)==string("восемнадцать"));
 	BOOST_TEST(stringfromint(19)==string("девятнадцать"));
 }
+
+
+BOOST_AUTO_TEST_CASE(less100){
+	
+	
+	BOOST_TEST(number_less_100_to_string(20)==string("двадцать"));
+	BOOST_TEST(number_less_100_to_string(31)==string("тридцать один"));
+	BOOST_TEST(number_less_100_to_string(45)==string("сорок пять"));
+	BOOST_TEST(number_less_100_to_string(53)==string("пятьдесят три"));
+	BOOST_TEST(number_less_100_to_string(60)==string("шестьдесят"));
+	BOOST_TEST(number_less_100_to_string(76)==string("семьдесят шесть"));
+	BOOST_TEST(number_less_100_to_string(88)==string("восемьдесят восемь"));
+	BOOST_TEST(number_less_100_to_string(92)==string("девяносто два"));
+}
+BOOST_AUTO_TEST_CASE(less1000){
+	
+	
+	BOOST_TEST(number_less_1000_to_string(203)==string("двести три"));
+	BOOST_TEST(number_less_1000_to_string(651)==string("шестьсот пятьдесят один"));
+	BOOST_TEST(number_less_1000_to_string(450)==string("четыреста пятьдесят"));
+	BOOST_TEST(number_less_1000_to_string(400)==string("четыреста"));
+	BOOST_TEST(number_less_1000_to_string(100)==string("сто"));
+}
+
 BOOST_AUTO_TEST_SUITE_END()
 #endif

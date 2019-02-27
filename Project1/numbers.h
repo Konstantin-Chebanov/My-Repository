@@ -74,3 +74,86 @@ string stringfromint(int num){
 	}	
 	return s;
 }	
+
+string number_less_100_to_string(int number)
+{
+    string answer = "";
+	int remain = number%10;
+	int tens =number-remain;
+	switch(tens)
+	{
+	case 20:
+		answer+="הגאהצאעü";
+		break;
+	case 30:
+		answer+="ענטהצאעü";
+		break;
+	case 40:
+		answer+="סמנמך";
+		break;
+	case 50:
+		answer+="ןÿעüהוסÿע";
+		break;
+	case 60:
+		answer+="רוסעüהוסÿע";
+		break;
+	case 70:
+		answer+="סולüהוסÿע";
+		break;
+	case 80:
+		answer+="גמסולüהוסÿע";
+		break;
+	case 90:
+		answer+="הוגÿםמסעמ";
+		break;
+	default:
+		break;
+	}
+	if(remain!=0)
+		answer+=" "+stringfromint(remain);
+	return answer;
+}
+
+
+string number_less_1000_to_string(int number)
+{
+    string answer = "";
+	int remain = number%100;
+	int hundreds =number-remain;
+	switch(hundreds)
+	{
+	case 100:
+		answer+="סעמ";
+		break;
+	case 200:
+		answer+="הגוסעט";
+		break;
+	case 300:
+		answer+="ענטסעמ";
+		break;
+	case 400:
+		answer+="קועûנוסעא";
+		break;
+	case 500:
+		answer+="ןÿעüסמע";
+		break;
+	case 600:
+		answer+="רוסעüסמע";
+		break;
+	case 700:
+		answer+="סולüסמע";
+		break;
+	case 800:
+		answer+="גמסולüסמע";
+		break;
+	case 900:
+		answer+="הוגÿעüסמע";
+		break;
+	default:
+		
+		break;
+	}
+	if(remain!=0)
+		answer+=" "+number_less_100_to_string(remain);
+	return answer;
+}
