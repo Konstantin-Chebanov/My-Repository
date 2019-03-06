@@ -68,7 +68,6 @@ string stringfromint(int num){
 		 break;
 
 	default:
-		s="Wrong num";
 		break;
 
 	}	
@@ -78,8 +77,11 @@ string stringfromint(int num){
 string number_less_100_to_string(int number)
 {
     string answer = "";
-	int remain = number%10;
-	int tens =number-remain;
+    if(number>=11 && number<=19)
+        answer=stringfromint(number);
+    else 
+    {  int remain=number%10;
+        int tens =number-remain;
 	switch(tens)
 	{
 	case 20:
@@ -109,8 +111,11 @@ string number_less_100_to_string(int number)
 	default:
 		break;
 	}
-	if(remain!=0)
-		answer+=" "+stringfromint(remain);
+	if(remain!=0 && tens==0)
+		answer+=stringfromint(remain);
+    else if (remain!=0)
+        answer+=" "+stringfromint(remain);
+    else if(tens==0 && remain==0) answer="нуль";}
 	return answer;
 }
 
@@ -153,7 +158,75 @@ string number_less_1000_to_string(int number)
 		
 		break;
 	}
-	if(remain!=0)
+	if(remain!=0 && hundreds!=0)
 		answer+=" "+number_less_100_to_string(remain);
+    else if (remain!=0)
+        answer+=number_less_100_to_string(remain);
+    else if(hundreds==0 && remain==0) answer="нуль";
 	return answer;
+}
+
+
+
+
+string object_to_string (int number , string s1 , string s2 , string s3)
+{
+    string answer=number_less_1000_to_string(number);
+    int remain=number%100;
+    if(remain>=5 && remain<=20)
+       answer+=" "+s3;
+    else 
+    {
+    remain=number%10;
+        switch (remain)
+        {
+        case 0:
+            answer+=" "+s3;
+            break;
+        case 1:
+            answer+=" "+s1;
+            break;
+        case 2:
+            answer+=" "+s2;
+            break;
+        case 3:
+            answer+=" "+s2;
+            break;
+        case 4:
+            answer+=" "+s2;
+            break;
+        case 5:
+            answer+=" "+s3;
+            break;
+        case 6:
+            answer+=" "+s3;
+            break;
+        case 7:
+            answer+=" "+s3;
+            break;
+        case 8:
+            answer+=" "+s3;
+            break;
+        case 9:
+            answer+=" "+s3;
+            break;
+        default:
+            break;
+        }
+    
+    }
+
+
+    return answer;
+}
+
+
+string currency_to_string (int integer,string is1,string is2,string is3, int decimal,string ds1,string ds2,string ds3)
+{
+
+    string answer=object_to_string(integer,is1,is2,is3)+", "+object_to_string(decimal,ds1,ds2,ds3);
+    return answer;
+
+
+
 }
