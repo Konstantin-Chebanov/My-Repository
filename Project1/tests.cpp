@@ -3,13 +3,15 @@
 #include<stdio.h>
 #include<string>
 #include "numbers.h";
+#include "Map.h";
 using namespace	std;
 #ifdef TEST
 #define BOOST_TEST_MODULE tests
 #include <boost/test/included/unit_test.hpp>
 
-BOOST_AUTO_TEST_SUITE(test_suite1)
 
+BOOST_AUTO_TEST_SUITE(test_suite1)
+    
 
 BOOST_AUTO_TEST_CASE(test_case1){
 	string s= "Hi!!!";
