@@ -134,7 +134,7 @@ string number_less_1000_to_string(int number)
 		answer+="двести";
 		break;
 	case 300:
-		answer+="тристо";
+		answer+="триста";
 		break;
 	case 400:
 		answer+="четыреста";
