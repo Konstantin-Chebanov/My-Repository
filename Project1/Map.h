@@ -3,23 +3,15 @@ using namespace std;
 
 struct Point
 {
-    int x;
-    int y;
-    Point(int _x, int _y)
+    double x;
+    double y;
+    Point(double _x, double _y)
     {
         x=_x;
         y=_y;
     }
 };
 
-
-class Map
-{
-public:
-    vector<Point> points;
-    Map();
-    Map(int seed);
-    void generate(int x, int dx, int y, int dy);
-    void gen(int x0, int y0, int dx, int dy );
-    ~Map();
-};
+double Rand_Double_Square (double Limit);
+bool Is_Point_Already_In_Vector(Point point,vector<Point> vec);
+vector<Point> generate_points_in_square(int n , double a);

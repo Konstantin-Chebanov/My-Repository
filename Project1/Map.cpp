@@ -1,38 +1,40 @@
 #include<vector>
 #include<cstdlib>
+#include<iostream>
 #include<ctime>
 #include "Map.h"
 
 using namespace std;
 
-Map::Map(int seed)
+double Rand_Double_Square (double Limit)
 {
-    srand(seed);
-}
-Map::Map()
-{
-    srand(time(NULL));
-}
-void Map::generate(int x, int dx, int y, int dy)
-{
-
-    dx=rand()%(dx/2) + dx/2;
-    dy=rand()%dy/2+dy/2;
-    points.push_back(Point(x,y));
-    points.push_back(Point(x,y+dy));
-    points.push_back(Point(x+dx,y));
-    points.push_back(Point(x+dx,y+dy));
-    int size = points.size();
-    for(int i=0;i<size;i++)
-    {       gen(points[i].x,points[i].y,dx/2,dy/2);
+    double d = static_cast<double>(rand()) / RAND_MAX;
+    double ans=d*Limit;
+    return ans;
     }
 
-}
+ bool Is_Point_Already_In_Vector(Point point,vector<Point> vec)
+ {
+     for(int i=0;i<vec.size();i++)
+     {
+         if(vec[i].x == point.x && vec[i].y==point.y)
+             return true;
+     }
+     return false;
+ }
 
-void Map::gen(int x0, int y0, int dx, int dy)
+
+
+
+vector<Point> generate_points_in_square(int n , double a)
 {
-    int decision=rand()%2;
-    
-    
+    vector<Point> vec;
+    while(vec.size()<n)
+    {
+        Point p(Rand_Double_Square(a),Rand_Double_Square(a));
+        if(!Is_Point_Already_In_Vector(p,vec))
+        vec.push_back(p);
+    }
 
+    return vec;
 }
