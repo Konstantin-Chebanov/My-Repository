@@ -1,1 +1,1 @@
-# spasibo 4to pro4itali
+# otsosu za xleb
