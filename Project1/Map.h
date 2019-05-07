@@ -12,6 +12,8 @@ struct Point
     }
 };
 
-double Rand_Double_Square (double Limit);
+double Rand_Double (double Limit);
 bool Is_Point_Already_In_Vector(Point point,vector<Point> vec);
 vector<Point> generate_points_in_square(int n , double a);
+vector<Point> generate_points_in_circle(int n, double r);
+vector<Point> generate_points_in_triangle(int n, double a, double b);
