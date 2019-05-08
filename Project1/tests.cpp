@@ -61,6 +61,7 @@ bool Is_Point_In_Circle(Point point, double r)
 {
 	return (x - x2) * (y2 - y1) - (y - y2) * (x2 - x1);
 }
+
 bool Is_Point_In_Triangle(Point point,double a, double b)
 {
 	double x1, x2, x3, y1, y2, y3, x, y;
@@ -118,7 +119,7 @@ BOOST_AUTO_TEST_CASE(Points_In_Circle)
 	double r = 20.12;
 	int n = 156;
 	vector<Point> vec = generate_points_in_circle(n, r);
-    BOOST_TEST(!Check_Duplicated_Points(vec));
+        BOOST_TEST(!Check_Duplicated_Points(vec));
 	for (int i = 0; i < vec.size(); i++)
 	{
 		BOOST_TEST(Is_Point_In_Circle(vec[i], r));
