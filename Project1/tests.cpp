@@ -134,8 +134,8 @@ BOOST_AUTO_TEST_CASE(Points_In_Triangle)
 	double b = 7.1;
 	int n = 159;
 	vector<Point> vec = generate_points_in_triangle(n, a , b);
-    vec.push_back(Point(1,1));
-    vec.push_back(Point(1,1));
+  //  vec.push_back(Point(1,1));
+  //  vec.push_back(Point(1,1));
     BOOST_TEST(!Check_Duplicated_Points(vec));
 	for (int i = 0; i < vec.size(); i++)
 	{
