@@ -76,6 +76,7 @@ BOOST_AUTO_TEST_CASE(objects_to_string){
 	BOOST_TEST(object_to_string(43, "глаз", "глаза", "глаз") == "сорок три глаза");
 	BOOST_TEST(object_to_string(50, "вагон", "вагона", "вагонов") == "пятьдесят вагонов");
 	BOOST_TEST(object_to_string(58, "вагон", "вагона", "вагонов") == "пятьдесят восемь вагонов");
+    BOOST_TEST(object_to_string(61, "гвоздь", "гвоздя", "гвоздей") == "шестьдесят один гвоздь");
 
 
 	
